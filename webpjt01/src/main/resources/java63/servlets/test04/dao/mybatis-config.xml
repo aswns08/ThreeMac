@@ -7,8 +7,8 @@
 
   <!-- SQL 맵퍼 파일에서 사용하기 변하게 클래스 이름에 대해 별명을 붙인다. -->
   <typeAliases>
-    <typeAlias type="java63.servlets.test03.domain.Product" 
-               alias="Product"/>
+    <typeAlias type="java63.servlets.test04.domain.Student" 
+               alias="Student"/>
   </typeAliases>
 
 
@@ -33,9 +33,8 @@
     </environment>
   </environments>
   
-  <!-- SQL문을 저장한 파일의 경로 설정 -->
   <mappers>
-    <mapper resource="java63/servlets/test03/dao/ProductDao.xml"/>
+    <mapper resource="java63/servlets/test04/dao/StudentDao.xml"/>
   </mappers>
 </configuration>
 
