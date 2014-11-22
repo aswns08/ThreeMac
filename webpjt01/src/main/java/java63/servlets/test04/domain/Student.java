@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class Student implements Serializable, Cloneable {
 	private static final long serialVersionUID = 1L;
 
-
 	protected String phNo;
 	protected String name;
 	protected String email;
@@ -14,8 +13,6 @@ public class Student implements Serializable, Cloneable {
 	protected int age;
 
 	public Student() {}
-
-
 
 	public Student(String phNo, String name, String email, String sex,
 			String subj, int age) {
@@ -27,8 +24,6 @@ public class Student implements Serializable, Cloneable {
 		this.subj = subj;
 		this.age = age;
 	}
-
-
 
 	@Override
 	public String toString() {
@@ -50,7 +45,6 @@ public class Student implements Serializable, Cloneable {
 		result = prime * result + ((subj == null) ? 0 : subj.hashCode());
 		return result;
 	}
-
 
 
 	@Override
@@ -91,7 +85,6 @@ public class Student implements Serializable, Cloneable {
 			return false;
 		return true;
 	}
-
 
 
 	public String getPhNo() {
