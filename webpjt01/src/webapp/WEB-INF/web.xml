@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+  <!-- 다음 파라미터 값은 ServletContext의 getInitParameter()를 
+       호출하면 얻을 수 있다. -->
+	<context-param>
+		<param-name>mybatisConfig</param-name>
+		<param-value>java63/servlets/test03/dao/mybatis-config.xml</param-value>
+	</context-param>
+	
+	<!-- 리스너 등록하기 -->
+	<listener>
+	  <listener-class>java63.servlets.test03.ContextLoaderListener</listener-class>
+	</listener>
+
+  <!--  
+	<servlet>
+		<servlet-name>Hello</servlet-name>
+		<servlet-class>java63.servlets.Hello</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Hello2</servlet-name>
+		<servlet-class>java63.servlets.Hello2</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AppInitServlet</servlet-name>
+		<servlet-class>java63.servlets.test03.AppInitServlet</servlet-class>
+		<init-param>
+			<param-name>mybatisConfig</param-name>
+			<param-value>java63/servlets/test03/dao/mybatis-config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Hello</servlet-name>
+		<url-pattern>/Hello</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Hello2</servlet-name>
+		<url-pattern>/Hello2</url-pattern>
+	</servlet-mapping>
+	-->
+</web-app>
