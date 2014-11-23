@@ -22,10 +22,10 @@ public class StudentAddServlet extends GenericServlet{
 
 		Student student = new Student();
 		student.setName(request.getParameter("name"));
-		student.setSex(request.getParameter("sex"));
-		student.setAge(Integer.parseInt(request.getParameter("age")));
-		student.setPhNo(request.getParameter("phNo"));
-		student.setEmail(request.getParameter("email"));
+		student.setSex(request.getParameter("age"));
+		student.setAge(Integer.parseInt(request.getParameter("phNo")));
+		student.setPhNo(request.getParameter("email"));
+		student.setEmail(request.getParameter("sex"));
 		student.setSubj(request.getParameter("subj"));
 
 		StudentDao studentDao = (StudentDao)this.getServletContext()
