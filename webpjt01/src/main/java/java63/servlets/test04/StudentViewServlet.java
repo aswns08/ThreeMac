@@ -134,12 +134,22 @@ public class StudentViewServlet extends GenericServlet {
     out.println("      return false;");
     out.println("    }");
         
-    out.println("    if ( $('#qty').val().length == 0) {");
+    out.println("    if ( $('#phNo').val().length == 0) {");
+    out.println("      alert('수량은 필수 입력 항목입니다.');");
+    out.println("      return false;");
+    out.println("    }");
+    
+    out.println("    if ( $('#age').val().length == 0) {");
+    out.println("      alert('수량은 필수 입력 항목입니다.');");
+    out.println("      return false;");
+    out.println("    }");
+    
+    out.println("    if ( $('#sex').val().length == 0) {");
     out.println("      alert('수량은 필수 입력 항목입니다.');");
     out.println("      return false;");
     out.println("    }");
         
-    out.println("    if ( $('#mkno').val().length == 0) {");
+    out.println("    if ( $('#subj').val().length == 0) {");
     out.println("      alert('제조사 번호는 필수 입력 항목입니다.');");
     out.println("      return false;");
     out.println("    }");
