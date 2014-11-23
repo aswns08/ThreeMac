@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- studentMng -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <context-param>
+    <param-name>mybatisConfig</param-name>
+    <param-value>java63/servlets/test04/dao/mybatis-config.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>java63.servlets.test04.ContextLoaderListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>java63.servlets.test04.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>charset</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>LogFilter</filter-name>
+    <filter-class>java63.servlets.test04.LogFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LogFilter</filter-name>
+    <url-pattern>/test04/*</url-pattern>
+  </filter-mapping>
+</web-app>

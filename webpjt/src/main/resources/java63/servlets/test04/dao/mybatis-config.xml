@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+
+  <typeAliases>
+    <typeAlias type="java63.servlets.test04.domain.Student" 
+               alias="Student"/>
+  </typeAliases>
+
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" 
+        value="jdbc:mysql://localhost:3306/mgtsys?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="study"/>
+        <property name="password" value="study"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="java63/servlets/test04/dao/StudentDao.xml"/>
+  </mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

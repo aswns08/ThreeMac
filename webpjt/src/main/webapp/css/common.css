@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.container {
+	border : 1px solid blue;
+	width: 800px;
+}
