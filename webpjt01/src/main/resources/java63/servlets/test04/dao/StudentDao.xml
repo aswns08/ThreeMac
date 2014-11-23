@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java63.servlets.test04.dao.StudentDao">
+
+  <resultMap type="Student" id="studentMap">
+    <id column="PNO" property="no"/>
+    <result column="PHONE" property="phNo"/>
+    <result column="NAME" property="name"/>
+    <result column="EMAIL" property="email"/>
+    <result column="SEX" property="sex"/>
+    <result column="SUBJECT" property="subj"/>
+    <result column="AGE" property="age"/>
+  </resultMap>
+  
+  <sql id="studentSelect">
+    SELECT PNO, NAME, PHONE, NAME, EMAIL, SEX, SUBJECT, AGE
+    FROM HR
+  </sql>
+  
+  <select id="selectList" parameterType="map" resultMap="studentMap">
+    <include refid="studentSelect"/>
+    <if test="pageSize > 0">
+      limit #{startIndex}, #{pageSize}
+    </if>
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultMap="studentMap">
+    <include refid="studentSelect"/> 
+    WHERE PNO=#{value}
+  </select>
+  
+  <insert id="insert" parameterType="Student">
+    INSERT INTO HR(PHONE, NAME, EMAIL, SEX, SUBJECT, AGE) 
+    VALUES (#{phNo}, #{name}, #{email}, #{sex}, #{subj}, #{age})
+  </insert>
+  
+  <update id="update" parameterType="Student">
+    UPDATE HR SET 
+      PHONE=#{phNo},
+      NAME=#{name},
+      EMAIL=#{email},
+      SEX=#{sex},
+      SUBJECT=#{subj},
+      AGE=#{age} 
+    WHERE PNO=#{no}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    DELETE FROM HR WHERE PNO=#{value}
+  </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,7 @@
 package java63.servlets.test04;
 
 import java.io.IOException;
-
-import java63.servlets.test04.dao.ProductDao;
+import java63.servlets.test04.dao.StudentDao;
 import java63.servlets.test04.domain.Student;
 
 import javax.servlet.GenericServlet;
@@ -10,8 +9,10 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/test04/student/list")
 public class StudentAddServlet extends GenericServlet{
 	private static final long serialVersionUID = 1L;
 
@@ -21,16 +22,16 @@ public class StudentAddServlet extends GenericServlet{
 
 		Student student = new Student();
 		student.setName(request.getParameter("name"));
-		student.setSex(request.getParameter("phno"));
-		student.setAge(Integer.parseInt(request.getParameter("phno")));
-		student.setPhNo(request.getParameter("phno"));
-		student.setEmail(request.getParameter("phno"));
-		student.setSubj(request.getParameter("phno"));
+		student.setSex(request.getParameter("sex"));
+		student.setAge(Integer.parseInt(request.getParameter("age")));
+		student.setPhNo(request.getParameter("phNo"));
+		student.setEmail(request.getParameter("email"));
+		student.setSubj(request.getParameter("subj"));
 
-		StudentDao productDao = (StudentDao)this.getServletContext()
-				.getAttribute("productDao");
+		StudentDao studentDao = (StudentDao)this.getServletContext()
+				.getAttribute("studentDao");
 		try {
-			productDao.insert(student);
+			studentDao.insert(student);
 		} catch (Exception e) {
 			// 다른 서블릿을 실행 => 실행 후 제어권이 되돌아 온다.
 
