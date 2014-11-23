@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Student implements Serializable, Cloneable {
 	private static final long serialVersionUID = 1L;
 
+	protected int no;
 	protected String phNo;
 	protected String name;
 	protected String email;
@@ -25,13 +26,25 @@ public class Student implements Serializable, Cloneable {
 		this.age = age;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [phNo=" + phNo + ", name=" + name + ", email=" + email
-				+ ", sex=" + sex + ", subj=" + subj + ", age=" + age + "]";
+	
+	public Student(int no, String phNo, String name, String email, String sex,
+			String subj, int age) {
+		super();
+		this.no = no;
+		this.phNo = phNo;
+		this.name = name;
+		this.email = email;
+		this.sex = sex;
+		this.subj = subj;
+		this.age = age;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Student [no=" + no + ", phNo=" + phNo + ", name=" + name
+				+ ", email=" + email + ", sex=" + sex + ", subj=" + subj
+				+ ", age=" + age + "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -40,12 +53,12 @@ public class Student implements Serializable, Cloneable {
 		result = prime * result + age;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + no;
 		result = prime * result + ((phNo == null) ? 0 : phNo.hashCode());
 		result = prime * result + ((sex == null) ? 0 : sex.hashCode());
 		result = prime * result + ((subj == null) ? 0 : subj.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -68,6 +81,8 @@ public class Student implements Serializable, Cloneable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (no != other.no)
+			return false;
 		if (phNo == null) {
 			if (other.phNo != null)
 				return false;
@@ -86,6 +101,13 @@ public class Student implements Serializable, Cloneable {
 		return true;
 	}
 
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
 
 	public String getPhNo() {
 		return phNo;

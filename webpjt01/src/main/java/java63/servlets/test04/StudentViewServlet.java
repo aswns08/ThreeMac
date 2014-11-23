@@ -42,7 +42,7 @@ public class StudentViewServlet extends GenericServlet {
     out.println("</head>");
     out.println("<body>");
     out.println("<div class='container'>");
-    out.println("<h1>제품 정보</h1>");
+    out.println("<h1>학생 정보</h1>");
     
     out.println("<form class='form-horizontal' role='form' "
         + "action='update' method='post'>");
@@ -63,20 +63,46 @@ public class StudentViewServlet extends GenericServlet {
     out.println("</div>");
     
     out.println("<div class='form-group'>");
-    out.println("  <label for='qty' class='col-sm-2 control-label'>수량</label>");
+    out.println("  <label for='age' class='col-sm-2 control-label'>나이</label>");
     out.println("  <div class='col-sm-10'>");
     out.println("    <input type='text' class='form-control' ");
-    out.println("        id='qty' name='qty' value='" + student.getQuantity() + "'>");
+    out.println("        id='age' name='age' value='" + student.getAge() + "'>");
     out.println("  </div>");
     out.println("</div>");
     
     out.println("<div class='form-group'>");
-    out.println("  <label for='mkno' class='col-sm-2 control-label'>제조사</label>");
+    out.println("  <label for='phNo' class='col-sm-2 control-label'>전화번호</label>");
     out.println("  <div class='col-sm-10'>");
     out.println("   <input type='text' class='form-control' ");
-    out.println("        id='mkno' name='mkno' value='" + student.getMakerNo() + "'>");
+    out.println("        id='phNo' name='phNo' value='" + student.getPhNo() + "'>");
     out.println("  </div>");
     out.println("</div>");
+    
+    out.println("<div class='form-group'>");
+    out.println("  <label for='email' class='col-sm-2 control-label'>이메일</label>");
+    out.println("  <div class='col-sm-10'>");
+    out.println("   <input type='text' class='form-control' ");
+    out.println("        id='email' name='email' value='" + student.getEmail() + "'>");
+    out.println("  </div>");
+    out.println("</div>");
+    
+    out.println("<div class='form-group'>");
+    out.println("  <label for='sex' class='col-sm-2 control-label'>성별</label>");
+    out.println("  <div class='col-sm-10'>");
+    out.println("   <input type='text' class='form-control' ");
+    out.println("        id='sex' name='sex' value='" + student.getSex() + "'>");
+    out.println("  </div>");
+    out.println("</div>");
+    
+    
+    out.println("<div class='form-group'>");
+    out.println("  <label for='subj' class='col-sm-2 control-label'>과목</label>");
+    out.println("  <div class='col-sm-10'>");
+    out.println("   <input type='text' class='form-control' ");
+    out.println("        id='subj' name='subj' value='" + student.getSubj() + "'>");
+    out.println("  </div>");
+    out.println("</div>");
+    
     
     out.println("<div class='form-group'>");
     out.println("  <div class='col-sm-offset-2 col-sm-10'>");

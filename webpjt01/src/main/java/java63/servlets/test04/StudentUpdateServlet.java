@@ -24,8 +24,12 @@ public class StudentUpdateServlet extends GenericServlet {
     Student student = new Student();
     student.setNo(Integer.parseInt(request.getParameter("no")));
     student.setName(request.getParameter("name"));
-    student.setQuantity(Integer.parseInt(request.getParameter("qty")));
-    student.setMakerNo(Integer.parseInt(request.getParameter("mkno")));
+    student.setAge(Integer.parseInt(request.getParameter("age")));
+    student.setPhNo(request.getParameter("phNo"));
+    student.setEmail(request.getParameter("email"));
+    student.setSex(request.getParameter("sex"));
+    student.setSubj(request.getParameter("subj"));
+    
     
     //AppInitServlet.studentDao.update(student);
     //ContextLoaderListener.studentDao.update(student);

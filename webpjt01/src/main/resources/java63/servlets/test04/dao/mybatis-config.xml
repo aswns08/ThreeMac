@@ -5,28 +5,19 @@
   
 <configuration>
 
-  <!-- SQL 맵퍼 파일에서 사용하기 변하게 클래스 이름에 대해 별명을 붙인다. -->
   <typeAliases>
     <typeAlias type="java63.servlets.test04.domain.Student" 
                alias="Student"/>
   </typeAliases>
 
 
-  <!-- DBMS 연결 정보 설정 
-    default => 여러 개 연결 정보 중에서 어떤 것을 사용할지 결정!
-  -->
   <environments default="development">
-  
-    <!-- DBMS연결 정보는 여러 개 선언할 수 있다. -->
     <environment id="development">
-      <!-- 트랜잭션 관리 방법 -->
       <transactionManager type="JDBC"/>
-      
-      <!-- DBMS 커넥션 풀 정보를 설정 -->
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.jdbc.Driver"/>
         <property name="url" 
-        value="jdbc:mysql://localhost:3306/studydb?useUnicode=true&amp;characterEncoding=utf8"/>
+        value="jdbc:mysql://localhost:3306/mgtsys?useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="username" value="study"/>
         <property name="password" value="study"/>
       </dataSource>

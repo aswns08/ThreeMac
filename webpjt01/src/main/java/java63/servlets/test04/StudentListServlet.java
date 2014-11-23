@@ -47,11 +47,12 @@ public class StudentListServlet extends GenericServlet {
     out.println("</head>");
     out.println("<body>");
     out.println("<div class='container'>");
-    out.println("<h1>제품 목록</h1>");
-    out.println("<p><a href='student-form.html' class='btn btn-primary'>새제품</a></p>");
+    out.println("<h1>학생 목록</h1>");
+    out.println("<p><a href='student-form.html' class='btn btn-primary'>등록</a></p>");
     out.println("<table class='table table-hover'>");
     out.println("<tr>");
-    out.println("  <th>#</th><th>제품</th><th>수량</th><th>제조사</th>");
+    out.println("  <th>#</th><th>이름</th><th>나이</th><th>전화번호</th>"
+    		+ "<th>이메일</th><th>성별</th><th>과목</th>");
     out.println("</tr>");
     
     //for (Student student : AppInitServlet.studentDao.selectList(pageNo, pageSize)) {
@@ -62,8 +63,9 @@ public class StudentListServlet extends GenericServlet {
     // => 장점: 특정 클래스에 종속되지 않는다. 유지보수에서 더 중요!
     StudentDao studentDao = (StudentDao)this.getServletContext()
                                          .getAttribute("studentDao");
-    for (Student student : studentDao.studentselectList(pageNo, pageSize)) {
+    for (Student student : studentDao.selectList(pageNo, pageSize)) {
       out.println("<tr>");
+      out.println("  <td>" + student.getNo() + "</td>");
       out.println("  <td>" + student.getName() + "</td>");
       out.println("  <td><a href='view?no=" + student.getAge() + "'>" 
             + student.getName() + "</a></td>");

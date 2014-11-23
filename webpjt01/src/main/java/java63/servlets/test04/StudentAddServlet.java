@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/test04/student/list")
+@WebServlet("/test04/student/add")
 public class StudentAddServlet extends GenericServlet{
 	private static final long serialVersionUID = 1L;
 
